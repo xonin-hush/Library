@@ -9,6 +9,7 @@
 </head>
 <body>
     <script src="./script.js" async defer></script>
+    <button id="show-button">Add new book</button>
     <dialog>
         <form >
             Enter your book's details
@@ -32,11 +33,14 @@
                 <input type="radio" id="book-name" name="read-status" required>
 
                 <label for="read-status">Currently Reading</label>
-                <input type="radio" id="book-name" name="read-status" required>
+                <input type="radio" id="read-status" name="read-status" required>
             </div>
         </form>
+        <button id="submit">Submit</button>
+        <button id="cancel">Cancel</button>
+
     </dialog>
-    <button id="show-button">show the dialog</button>
+    
 
 </body>
 </html>
