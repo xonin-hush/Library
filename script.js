@@ -9,25 +9,8 @@ const myLibrary = [Book = {
   readStatus: "on",
   title: "something?"
 }];
-// Book = {
-//   author: "something",
-//   pagesNum: "141",
-//   readStatus: "on",
-//   title: "something?"
-// }
-myLibrary.forEach(Book => {
-  for (let element in Book) {
-      console.log(Book[element])
-  }
-})
 
-// for (var objectt in myLibrary) {
-//   console.log("object", objectt)
-//   for (var key in objectt) {
-//     console.log(key + " -> " + objectt[key]);
 
-//   }
-// }
 
 const dialog = document.querySelector("dialog")
 const showButton = document.querySelector("#show-button")
@@ -66,6 +49,21 @@ function Book(title, author, pagesNum, readStatus) {
 cancel.addEventListener("click", () => {
   dialog.close()
 })
+
+myLibrary.forEach(Book => {
+  for (let element in Book) {
+    let test = document.createElement('div')
+    test.textContent = Book[element]
+    let cards = document.querySelector(".cards")
+    cards.appendChild(test)
+    console.log(Book[element])
+  }
+})
+
+
+
+
+
 // submit.addEventListener("change", (e) => {
 //   confirmBtn.value = selectEl.value;
 // });
