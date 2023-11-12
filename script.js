@@ -1,11 +1,33 @@
-const myLibrary = [Book ={
+const myLibrary = [Book = {
   author: "1414",
   pagesNum: "141",
   readStatus: "on",
   title: "123"
+}, Book = {
+  author: "something",
+  pagesNum: "141",
+  readStatus: "on",
+  title: "something?"
 }];
+// Book = {
+//   author: "something",
+//   pagesNum: "141",
+//   readStatus: "on",
+//   title: "something?"
+// }
+myLibrary.forEach(Book => {
+  for (let element in Book) {
+      console.log(Book[element])
+  }
+})
 
+// for (var objectt in myLibrary) {
+//   console.log("object", objectt)
+//   for (var key in objectt) {
+//     console.log(key + " -> " + objectt[key]);
 
+//   }
+// }
 
 const dialog = document.querySelector("dialog")
 const showButton = document.querySelector("#show-button")
