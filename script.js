@@ -1,13 +1,21 @@
-const myLibrary = [];
+const myLibrary = [Book ={
+  author: "1414",
+  pagesNum: "141",
+  readStatus: "on",
+  title: "123"
+}];
+
+
+
 const dialog = document.querySelector("dialog")
 const showButton = document.querySelector("#show-button")
 const cancel = dialog.querySelector("#cancel")
 const submit = dialog.querySelector("#submit")
+let displayTemp = document.querySelector(".title")
 addBookToLibrary()
 showButton.addEventListener("click", () => {
   dialog.showModal()
 });
-
 function addBookToLibrary() {
   submit.addEventListener("click", (event) => {
     event.preventDefault(); // We don't want to submit this fake form
@@ -22,28 +30,26 @@ function addBookToLibrary() {
     myLibrary.push(temp)
     console.log(title)
     console.log('myLibrary', myLibrary)
+    dialog.close(dialog.value); // Have to send the select box value here.
   });
-  return title.value;
 }
 
-submit.addEventListener("change", (e) => {
-  confirmBtn.value = selectEl.value;
-});
 
-dialog.addEventListener("close", (e) => {
-  outputBox.value =
-    dialog.returnValue === "default"
-      ? "No return value."
-      : `ReturnValue: ${dialog.returnValue}.`
-})
-//dialog.close(selectEl.value); // Have to send the select box value here.
 function Book(title, author, pagesNum, readStatus) {
   this.title = title
   this.author = author
   this.pagesNum = pagesNum
   this.readStatus = readStatus
 }
-
 cancel.addEventListener("click", () => {
   dialog.close()
 })
+// submit.addEventListener("change", (e) => {
+//   confirmBtn.value = selectEl.value;
+// });
+// dialog.addEventListener("close", (e) => {
+//   outputBox.value =
+//     dialog.returnValue === "default"
+//       ? "No return value."
+//       : `ReturnValue: ${dialog.returnValue}.`
+// })
