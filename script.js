@@ -8,6 +8,11 @@ const myLibrary = [Book = {
   pagesNum: "141",
   readStatus: "on",
   title: "something?"
+}, Book = {
+  author: "something",
+  pagesNum: "141",
+  readStatus: "on",
+  title: "something?"
 }];
 
 
@@ -16,6 +21,7 @@ const dialog = document.querySelector("dialog")
 const showButton = document.querySelector("#show-button")
 const cancel = dialog.querySelector("#cancel")
 const submit = dialog.querySelector("#submit")
+const cards = document.querySelector(".cards")
 let displayTemp = document.querySelector(".title")
 addBookToLibrary()
 showButton.addEventListener("click", () => {
@@ -51,19 +57,16 @@ cancel.addEventListener("click", () => {
 })
 
 myLibrary.forEach(Book => {
+  let card = document.createElement('div')
+  cards.appendChild(card)
+  card.classList.add('card')
   for (let element in Book) {
     let test = document.createElement('div')
     test.textContent = Book[element]
-    let cards = document.querySelector(".cards")
-    cards.appendChild(test)
+    card.appendChild(test)
     console.log(Book[element])
   }
-})
-
-
-
-
-
+});
 // submit.addEventListener("change", (e) => {
 //   confirmBtn.value = selectEl.value;
 // });
