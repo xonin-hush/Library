@@ -1,22 +1,22 @@
-const myLibrary = [Book = {
-  author: "1414",
-  pagesNum: "141",
-  readStatus: "on",
-  title: "123"
-}, Book = {
-  author: "something",
-  pagesNum: "141",
-  readStatus: "on",
-  title: "something?"
-}, Book = {
-  author: "something",
-  pagesNum: "141",
-  readStatus: "on",
-  title: "something?"
-}];
+const myLibrary = [];
+// Book = {
+//   author: "1414",
+//   pagesNum: "141",
+//   readStatus: "on",
+//   title: "123"
+// }, Book = {
+//   author: "something",
+//   pagesNum: "141",
+//   readStatus: "on",
+//   title: "something?"
+// }, Book = {
+//   author: "something",
+//   pagesNum: "141",
+//   readStatus: "on",
+//   title: "something?"
+// }
 
-
-
+let card = ""
 const dialog = document.querySelector("dialog")
 const showButton = document.querySelector("#show-button")
 const cancel = dialog.querySelector("#cancel")
@@ -42,6 +42,7 @@ function addBookToLibrary() {
     console.log(title)
     console.log('myLibrary', myLibrary)
     dialog.close(dialog.value); // Have to send the select box value here.
+    showBooks()
   });
 }
 
@@ -52,21 +53,23 @@ function Book(title, author, pagesNum, readStatus) {
   this.pagesNum = pagesNum
   this.readStatus = readStatus
 }
-cancel.addEventListener("click", () => {
-  dialog.close()
-})
 
-myLibrary.forEach(Book => {
-  let card = document.createElement('div')
-  cards.appendChild(card)
-  card.classList.add('card')
-  for (let element in Book) {
-    let test = document.createElement('div')
-    test.textContent = Book[element]
-    card.appendChild(test)
-    console.log(Book[element])
+function showBooks() {
+  while (cards.firstChild) {
+    cards.removeChild(cards.lastChild);
   }
-});
+  myLibrary.forEach(Book => {
+    let card = document.createElement('div')
+    cards.appendChild(card)
+    card.classList.add('card')
+    for (let element in Book) {
+      let test = document.createElement('div')
+      test.textContent = Book[element]
+      card.appendChild(test)
+      console.log(Book[element])
+    }
+  });
+}
 // submit.addEventListener("change", (e) => {
 //   confirmBtn.value = selectEl.value;
 // });
@@ -76,3 +79,7 @@ myLibrary.forEach(Book => {
 //       ? "No return value."
 //       : `ReturnValue: ${dialog.returnValue}.`
 // })
+cancel.addEventListener("click", () => {
+
+  dialog.close()
+})
