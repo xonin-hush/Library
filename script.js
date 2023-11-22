@@ -54,6 +54,7 @@ function showBooks() {
 
   while (cards.firstChild) { //prevent cards to duplicate
     cards.removeChild(cards.lastChild);
+    cards.classList.add('cards')
   }
 
   myLibrary.forEach(Book => { //creates each card in array
