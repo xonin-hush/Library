@@ -1,20 +1,4 @@
 const myLibrary = [];
-// Book = {
-//   author: "1414",
-//   pages: "141",
-//   readStatus: "on",
-//   title: "123"
-// }, Book = {
-//   author: "something",
-//   pages: "141",
-//   readStatus: "on",
-//   title: "something?"
-// }, Book = {
-//   author: "something",
-//   pages: "141",
-//   readStatus: "on",
-//   title: "something?"
-// }
 
 let card = ""
 const dialog = document.querySelector("dialog")
@@ -23,6 +7,7 @@ const cancel = dialog.querySelector("#cancel")
 const submit = dialog.querySelector("#submit")
 const cards = document.querySelector(".cards")
 let displayTemp = document.querySelector(".title")
+
 addBookToLibrary()
 showButton.addEventListener("click", () => {
   dialog.showModal()
@@ -62,29 +47,43 @@ function showBooks() {
     cards.appendChild(card)
     card.classList.add('card')
 
+
+
     for (let element in Book) {
       let text = document.createElement('div')
-     if(element=="title"){
-      text.textContent = "Title: "+Book[element]
-      card.appendChild(text)
-     }
-     if(element=="author"){
-      text.textContent = "Author: "+Book[element]
-      card.appendChild(text)
-     }
-     if(element=="pages"){
-      text.textContent = "Pages: "+Book[element]
-      card.appendChild(text)
-     }
-     if(element=="readStatus"){
-      text.textContent = "Status: "+Book[element]
-      card.appendChild(text)
-     }
+      if (element == "title") {
+        text.textContent = "Title: " + Book[element]
+        card.appendChild(text)
+      }
+      if (element == "author") {
+        text.textContent = "Author: " + Book[element]
+        card.appendChild(text)
+      }
+      if (element == "pages") {
+        text.textContent = "Pages: " + Book[element]
+        card.appendChild(text)
+      }
+      if (element == "readStatus") {
+        text.textContent = "Status: " + Book[element]
+        card.appendChild(text)
+      }
 
     }
+
+    let removeButton = document.createElement('button')
+    removeButton.textContent = "hello"
+    card.appendChild(removeButton)
   });
+
 }
 cancel.addEventListener("click", () => {
 
   dialog.close()
 })
+
+//working on it
+function removeBook() {
+  window.addEventListener("click", function(e) {
+    console.log(e)
+  });
+}
