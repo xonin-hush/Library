@@ -74,17 +74,7 @@ button {
     justify-self: center;
     margin-bottom: 20px;
 }
-.button {
-    background-color: skyblue;
-    color: #1f2937;
-    border-color: skyblue;
-    border-radius: 10px;
-    border-style: solid;
-    width: 100px;
-    height: 35px;
-    justify-self: center;
-    margin-bottom: 20px;
-}
+
 button:hover {
     background-color: rgb(151, 114, 45);
     border-color: rgb(151, 114, 45);

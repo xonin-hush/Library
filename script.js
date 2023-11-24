@@ -7,6 +7,7 @@ const cancel = dialog.querySelector("#cancel")
 const submit = dialog.querySelector("#submit")
 const cards = document.querySelector(".cards")
 let displayTemp = document.querySelector(".title")
+let removeButton = ""
 
 addBookToLibrary()
 showButton.addEventListener("click", () => {
@@ -41,7 +42,7 @@ function showBooks() {
     cards.removeChild(cards.lastChild);
     cards.classList.add('cards')
   }
-
+  i = 0
   myLibrary.forEach(Book => { //creates each card in array
     let card = document.createElement('div')
     cards.appendChild(card)
@@ -69,10 +70,14 @@ function showBooks() {
       }
 
     }
-
     let removeButton = document.createElement('button')
+    // removeButton.setAttribute('data-object', i)
+    removeButton.value = i
+    console.log(removeButton.value)
     removeButton.textContent = "hello"
     card.appendChild(removeButton)
+
+    i = i + 1
   });
 
 }
@@ -83,7 +88,9 @@ cancel.addEventListener("click", () => {
 
 //working on it
 function removeBook() {
-  window.addEventListener("click", function(e) {
-    console.log(e)
+  window.addEventListener("click", function (e) {
+    console.log(e.target.value)
+delete myLibrary[e.target.value]
   });
 }
+removeBook()
