@@ -1,19 +1,26 @@
 const myLibrary = [];
-
-let card = ""
+var card = ""
 const dialog = document.querySelector("dialog")
 const showButton = document.querySelector("#show-button")
 const cancel = dialog.querySelector("#cancel")
 const submit = dialog.querySelector("#submit")
 const cards = document.querySelector(".cards")
-let displayTemp = document.querySelector(".title")
-let removeButton = ""
-
-
+var displayTemp = document.querySelector(".title")
+var removeButton = ""
 addBookToLibrary()
+removeBook()
+function Book(title, author, pages, readStatus) {
+  this.title = title
+  this.author = author
+  this.pages = pages
+  this.readStatus = readStatus
+}
+
+
 showButton.addEventListener("click", () => {
   dialog.showModal()
 });
+
 function addBookToLibrary() {
   submit.addEventListener("click", (event) => {
     event.preventDefault(); // We don't want to submit this fake form
@@ -29,14 +36,6 @@ function addBookToLibrary() {
   });
 }
 
-
-function Book(title, author, pages, readStatus) {
-  this.title = title
-  this.author = author
-  this.pages = pages
-  this.readStatus = readStatus
-}
-
 function showBooks() {
 
   while (cards.firstChild) { //prevent cards from duplicating
@@ -45,14 +44,14 @@ function showBooks() {
   }
   i = 0
   myLibrary.forEach(Book => { //creates each card in array
-    let card = document.createElement('div')
+    var card = document.createElement('div')
     cards.appendChild(card)
     card.classList.add('card')
 
 
 //fills card with info
-    for (let element in Book) {
-      let text = document.createElement('div')
+    for (var element in Book) {
+      var text = document.createElement('div')
       if (element == "title") {
         text.textContent = "Title: " + Book[element]
         card.appendChild(text)
@@ -71,20 +70,17 @@ function showBooks() {
       }
 
     }
-    let removeButton = document.createElement('button')
+    var removeButton = document.createElement('button')
     removeButton.value = i
     console.log(removeButton.value)
-    // parseInt(removeButton.value)
-    // console.log(typeof(removeButton.value))
     removeButton.textContent = removeButton.value
     card.appendChild(removeButton)
-
     i = i + 1
   });
 
 }
-cancel.addEventListener("click", () => {
 
+cancel.addEventListener("click", () => {
   dialog.close()
 })
 
@@ -95,4 +91,3 @@ function removeBook() {
     showBooks()
   });
 }
-removeBook()
