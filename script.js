@@ -9,6 +9,7 @@ const cards = document.querySelector(".cards")
 let displayTemp = document.querySelector(".title")
 let removeButton = ""
 
+
 addBookToLibrary()
 showButton.addEventListener("click", () => {
   dialog.showModal()
@@ -38,7 +39,7 @@ function Book(title, author, pages, readStatus) {
 
 function showBooks() {
 
-  while (cards.firstChild) { //prevent cards to duplicate
+  while (cards.firstChild) { //prevent cards from duplicating
     cards.removeChild(cards.lastChild);
     cards.classList.add('cards')
   }
@@ -49,7 +50,7 @@ function showBooks() {
     card.classList.add('card')
 
 
-
+//fills card with info
     for (let element in Book) {
       let text = document.createElement('div')
       if (element == "title") {
@@ -71,10 +72,11 @@ function showBooks() {
 
     }
     let removeButton = document.createElement('button')
-    // removeButton.setAttribute('data-object', i)
     removeButton.value = i
     console.log(removeButton.value)
-    removeButton.textContent = "hello"
+    // parseInt(removeButton.value)
+    // console.log(typeof(removeButton.value))
+    removeButton.textContent = removeButton.value
     card.appendChild(removeButton)
 
     i = i + 1
@@ -88,9 +90,15 @@ cancel.addEventListener("click", () => {
 
 //working on it
 function removeBook() {
-  window.addEventListener("click", function (e) {
+  cards.addEventListener("click", function (e) {
     console.log(e.target.value)
-delete myLibrary[e.target.value]
+    if(removeButton.clicked==true){
+      console.log(hi)
+    }
+    
+    myLibrary.splice(e.target.value,1)
+    console.log(myLibrary)
+    showBooks()
   });
 }
 removeBook()
