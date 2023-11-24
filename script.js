@@ -88,16 +88,10 @@ cancel.addEventListener("click", () => {
   dialog.close()
 })
 
-//working on it
+
 function removeBook() {
   cards.addEventListener("click", function (e) {
-    console.log(e.target.value)
-    if(removeButton.clicked==true){
-      console.log(hi)
-    }
-    
     myLibrary.splice(e.target.value,1)
-    console.log(myLibrary)
     showBooks()
   });
 }
