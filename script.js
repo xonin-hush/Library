@@ -9,6 +9,7 @@ var displayTemp = document.querySelector(".title")
 var removeButton = ""
 addBookToLibrary()
 removeBook()
+
 function Book(title, author, pages, readStatus) {
   this.title = title
   this.author = author
@@ -47,9 +48,7 @@ function showBooks() {
     var card = document.createElement('div')
     cards.appendChild(card)
     card.classList.add('card')
-
-
-//fills card with info
+    //fills card with info
     for (var element in Book) {
       var text = document.createElement('div')
       if (element == "title") {
@@ -68,12 +67,14 @@ function showBooks() {
         text.textContent = "Status: " + Book[element]
         card.appendChild(text)
       }
-
     }
     var removeButton = document.createElement('button')
     removeButton.value = i
-    console.log(removeButton.value)
     removeButton.textContent = removeButton.value
+    // var img = document.createElement('img')
+    // img.src = "/images/minus-circle-outline.svg"
+    // img.classList.add('img')
+    // card.appendChild(img)
     card.appendChild(removeButton)
     i = i + 1
   });
@@ -87,7 +88,9 @@ cancel.addEventListener("click", () => {
 
 function removeBook() {
   cards.addEventListener("click", function (e) {
-    myLibrary.splice(e.target.value,1)
-    showBooks()
+    if(e.target.value!=undefined){
+    myLibrary.splice(e.target.value, 1)
+    console.log(myLibrary)
+    showBooks()}
   });
 }

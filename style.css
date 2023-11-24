@@ -74,7 +74,10 @@ button {
     justify-self: center;
     margin-bottom: 20px;
 }
-
+.img{
+    height: 2em;
+    fill: skyblue !important; 
+}
 button:hover {
     background-color: rgb(151, 114, 45);
     border-color: rgb(151, 114, 45);
