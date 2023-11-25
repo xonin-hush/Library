@@ -1,12 +1,11 @@
 const myLibrary = [];
-var card = ""
 const dialog = document.querySelector("dialog")
 const showButton = document.querySelector("#show-button")
 const cancel = dialog.querySelector("#cancel")
 const submit = dialog.querySelector("#submit")
 const cards = document.querySelector(".cards")
 var displayTemp = document.querySelector(".title")
-var removeButton = ""
+var card = ""
 addBookToLibrary()
 removeBook()
 
@@ -16,7 +15,6 @@ function Book(title, author, pages, readStatus) {
   this.pages = pages
   this.readStatus = readStatus
 }
-
 
 showButton.addEventListener("click", () => {
   dialog.showModal()
@@ -38,7 +36,6 @@ function addBookToLibrary() {
 }
 
 function showBooks() {
-
   while (cards.firstChild) { //prevent cards from duplicating
     cards.removeChild(cards.lastChild);
     cards.classList.add('cards')
@@ -68,29 +65,25 @@ function showBooks() {
         card.appendChild(text)
       }
     }
-    var removeButton = document.createElement('button')
-    removeButton.value = i
-    removeButton.textContent = removeButton.value
-    // var img = document.createElement('img')
-    // img.src = "/images/minus-circle-outline.svg"
-    // img.classList.add('img')
-    // card.appendChild(img)
-    card.appendChild(removeButton)
-    i = i + 1
+    var removeIcon = document.createElement('img')
+    removeIcon.setAttribute('id', 'removeButton')
+    removeIcon.src = "/images/minus-circle-outline.svg"
+    removeIcon.classList.add('img')
+    removeIcon.value = i
+    card.appendChild(removeIcon)
+    i++
   });
-
 }
 
 cancel.addEventListener("click", () => {
   dialog.close()
 })
 
-
 function removeBook() {
   cards.addEventListener("click", function (e) {
-    if(e.target.value!=undefined){
-    myLibrary.splice(e.target.value, 1)
-    console.log(myLibrary)
-    showBooks()}
+    if (e.target.getAttribute('id') == "removeButton") {
+      myLibrary.splice(e.target.value, 1)
+      showBooks()
+    }
   });
 }
