@@ -9,7 +9,7 @@ var displayTemp = document.querySelector(".title") //?
 var card = ""
 addBookToLibrary()
 removeBook()
-
+handleStatus()
 function Book(title, author, pages, readStatus) {
   this.title = title
   this.author = author
@@ -75,8 +75,6 @@ function showBooks() {
         }
       }
     }
-    // console.log(myLibrary[0[3]])
-    //handles the remove icon
     var removeIcon = document.createElement('img')
     removeIcon.setAttribute('id', 'removeButton')
     removeIcon.src = "/images/minus-circle-outline.svg"
@@ -93,17 +91,12 @@ function showBooks() {
     }
     else {
       statusButton.textContent = "To Read"
-
     }
     card.appendChild(statusButton)
 
-    // handleStatus(statusButton, card) backup
     i++
   });
 }
-
-handleStatus()
-
 cancel.addEventListener("click", () => {
   dialog.close()
 })
@@ -116,67 +109,23 @@ function removeBook() {
     }
   });
 }
-// function handleStatus(statusButton, card) { backup
 function handleStatus() {
   cards.addEventListener("click", function (e) {
-    altTemp = e.target.value
-    console.log("me " + myLibrary[altTemp].readStatus)
-    statusButton = document.querySelector(`#changeStatus-${altTemp}`)
-    console.log(altTemp)
-    if (myLibrary[altTemp].readStatus === 'on') {
-      // statusButton.textContent = "To Read"
-      myLibrary[altTemp].readStatus = "To Read"
+    cardNumber = e.target.value
+    console.log("me " + myLibrary[cardNumber].readStatus)
+    statusButton = document.querySelector(`#changeStatus-${cardNumber}`)
+    if (myLibrary[cardNumber].readStatus === 'on') {
+      myLibrary[cardNumber].readStatus = "To Read"
     }
-    if (myLibrary[altTemp].readStatus === 'To Read') {
+    if (myLibrary[cardNumber].readStatus === 'To Read') {
       console.log(statusButton.textContent)
-      // statusButton.textContent = "Read"
-      myLibrary[altTemp].readStatus = "Read"
-      console.log('1true')
-
-      // card.appendChild(statusButton)
-
-    } else if (myLibrary[altTemp].readStatus === 'Reading') {
-      // statusButton.textContent = "To Read"
-      myLibrary[altTemp].readStatus = "To Read"
-
-      console.log('3true')
-      // card.appendChild(statusButton)
-
-    } else if (myLibrary[altTemp].readStatus === 'Read') {
-      // statusButton.textContent = "Reading"
-      myLibrary[altTemp].readStatus = "Reading"
-
-      console.log('2true')
-      // card.appendChild(statusButton)
-
-
+      myLibrary[cardNumber].readStatus = "Read"
+    } else if (myLibrary[cardNumber].readStatus === 'Reading') {
+      myLibrary[cardNumber].readStatus = "To Read"
+    } else if (myLibrary[cardNumber].readStatus === 'Read') {
+      myLibrary[cardNumber].readStatus = "Reading"
     }
     showBooks()
-    // if (statusButton.textContent === 'To Read') {
-    //   console.log(statusButton.textContent)
-    //   statusButton.textContent = "Read"
-    //   myLibrary[altTemp].readStatus="Read"
-
-    //   console.log('1true')
-
-    //   // card.appendChild(statusButton)
-
-    // } else if (statusButton.textContent === 'Reading') {
-    //   statusButton.textContent = "To Read"
-    //   myLibrary[altTemp].readStatus="To Read"
-
-    //   console.log('3true')
-    //   // card.appendChild(statusButton)
-
-    // } else if (statusButton.textContent === 'Read') {
-    //   statusButton.textContent = "Reading"
-    //   myLibrary[altTemp].readStatus="Reading"
-
-    //   console.log('2true')
-    //   // card.appendChild(statusButton)
-
-
-    // }
   })
 
 }
