@@ -4,7 +4,7 @@ const showButton = document.querySelector("#show-button")
 const cancel = dialog.querySelector("#cancel")
 const submit = dialog.querySelector("#submit")
 const cards = document.querySelector(".cards")
-var statusButton = ""
+var statusButton = document.createElement('button')
 var displayTemp = document.querySelector(".title") //?
 var card = ""
 addBookToLibrary()
@@ -48,7 +48,6 @@ function showBooks() {
     card.setAttribute('id', 'card')
     cards.appendChild(card)
     card.classList.add('card')
-    console.log(Book)
     //fills card with info
     for (var element in Book) {
       var text = document.createElement('div')
@@ -111,21 +110,21 @@ function removeBook() {
 }
 function handleStatus() {
   cards.addEventListener("click", function (e) {
+    temp=e.target.getAttribute('id')
+    if(temp.includes("changeStatus")){
     cardNumber = e.target.value
-    console.log("me " + myLibrary[cardNumber].readStatus)
     statusButton = document.querySelector(`#changeStatus-${cardNumber}`)
     if (myLibrary[cardNumber].readStatus === 'on') {
       myLibrary[cardNumber].readStatus = "To Read"
     }
     if (myLibrary[cardNumber].readStatus === 'To Read') {
-      console.log(statusButton.textContent)
       myLibrary[cardNumber].readStatus = "Read"
     } else if (myLibrary[cardNumber].readStatus === 'Reading') {
       myLibrary[cardNumber].readStatus = "To Read"
     } else if (myLibrary[cardNumber].readStatus === 'Read') {
       myLibrary[cardNumber].readStatus = "Reading"
     }
-    showBooks()
+    showBooks()}
   })
 
 }
