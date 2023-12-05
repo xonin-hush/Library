@@ -97,3 +97,6 @@ button:hover {
     padding-left: 40px;
     margin-top: auto;
 }
+#0{
+    border-left: 10px solid rgb(218, 16, 127);
+}
