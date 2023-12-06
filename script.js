@@ -29,7 +29,7 @@ function addBookToLibrary() {
     var author = document.querySelector("#author-name")
     var pages = document.querySelector("#pages-number")
     var readStatus = document.querySelector("#read-status")
-    temp = new Book(title.value, author.value, pages.value, readStatus.value)
+    temp = new Book(title.value, author.value, pages.value, "on")
     myLibrary.push(temp)
     dialog.close(dialog.value); // Have to send the select box value here.
     showBooks()

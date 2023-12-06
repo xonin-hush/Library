@@ -8,6 +8,11 @@ body {
     min-height: 100vh;
 }
 
+dialog {
+    border-radius: 20px;
+    /* display: inline-block; */
+}
+
 a {
     list-style-type: none;
     text-decoration: none;
@@ -74,10 +79,12 @@ button {
     justify-self: center;
     margin-bottom: 20px;
 }
-.img{
+
+.img {
     height: 2em;
-    fill: skyblue !important; 
+    fill: skyblue !important;
 }
+
 button:hover {
     background-color: rgb(151, 114, 45);
     border-color: rgb(151, 114, 45);
@@ -97,6 +104,12 @@ button:hover {
     padding-left: 40px;
     margin-top: auto;
 }
-#0{
-    border-left: 10px solid rgb(218, 16, 127);
+
+.label-input{
+    margin-bottom: 10px;
+
+}
+label{
+    display: inline-block;
+    width: 150px;
 }
