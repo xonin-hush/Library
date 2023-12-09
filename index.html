@@ -11,38 +11,43 @@
 
 <body>
     <script src="./script.js" async defer></script>
-    <div><div class="header">
-        <div class="header-logo">Library</div>
-        <ul>
-            <il><a href="https://github.com/xonin-hush/"> Visit my github page</a></il>
-            <il><a href="https://waitbutwhy.com/2013/10/why-procrastinators-procrastinate.html">Why procrastinators procrastinate</a></il>
-            <il><a href="https://github.com/xonin-hush/Odin-Etch-a-Sketch">Repo's page</a></il>
-        </ul>
+    <div>
+        <div class="header">
+            <div class="header-logo">Library</div>
+            <ul><il><a href="https://github.com/xonin-hush/Odin-Etch-a-Sketch">Repo's page</a></il>
+                <il><a href="https://github.com/xonin-hush/"> Visit my github page</a></il>
+                <il><a href="https://waitbutwhy.com/2013/10/why-procrastinators-procrastinate.html">Why procrastinators
+                        procrastinate</a></il>
+                
+            </ul>
 
+        </div>
+
+        <dialog>
+            <form>
+                Enter your book's details
+                <div class="label-input">
+                    <label for="first-name" id="name-label">Book's Name </label>
+                    <input type="text" id="book-name" name="book-name" required>
+                </div>
+                <div class="label-input">
+                    <label for="author-name" id="author-label">Author's Name</label>
+                    <input type="text" id="author-name" name="author-name" required>
+                </div>
+                <div class="label-input">
+                    <label for="pages-number" id="pages-label"> Pages' Number</label>
+                    <input type="number" id="pages-number" name="pages-number" required>
+                </div>
+            </form>
+            <button id="submit">Submit</button>
+            <button id="cancel">Cancel</button>
+
+        </dialog>
+        <div class="cards"></div>
+        <div id="add-button">
+            <button id="show-button">Add new book</button>
+        </div>
     </div>
-    
-    <button id="show-button">Add new book</button>
-    <dialog>
-        <form>
-            Enter your book's details
-            <div class="label-input">
-                <label for="first-name" id="name-label">Book's Name </label>
-                <input type="text" id="book-name" name="book-name" required>
-            </div>
-            <div  class="label-input">
-                <label for="author-name" id="author-label">Author's Name</label>
-                <input type="text" id="author-name" name="author-name" required>
-            </div>
-            <div class="label-input">
-                <label for="pages-number" id="pages-label"> Pages' Number</label>
-                <input type="number" id="pages-number" name="pages-number" required>
-            </div>
-        </form>
-        <button id="submit">Submit</button>
-        <button id="cancel">Cancel</button>
-
-    </dialog>
-    <div class="cards"></div></div>
     <div class="footer">made by Xonin</div>
 </body>
 

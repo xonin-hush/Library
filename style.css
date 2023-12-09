@@ -6,6 +6,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-weight: bold;
+    color: #3a4049;
 }
 
 dialog {
@@ -60,6 +62,7 @@ ul {
 }
 
 .cards {
+    margin-top: 40px;
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(2, 1fr);
@@ -68,26 +71,26 @@ ul {
 
 }
 
-button {
-    background-color: skyblue;
-    color: #1f2937;
-    border-color: skyblue;
-    border-radius: 10px;
-    border-style: solid;
-    width: 100px;
-    height: 35px;
-    justify-self: center;
-    margin-bottom: 20px;
-}
+
 
 .img {
     height: 2em;
     fill: skyblue !important;
+    display: flex;
+    justify-self: center;
+    align-self: center;
 }
 
 button:hover {
     background-color: rgb(151, 114, 45);
     border-color: rgb(151, 114, 45);
+}
+
+.img:hover {
+    font-size: 90%;
+    justify-self: center;
+    align-self: center;
+
 }
 
 .footer {
@@ -105,11 +108,38 @@ button:hover {
     margin-top: auto;
 }
 
-.label-input{
+.label-input {
     margin-bottom: 10px;
 
 }
-label{
+
+label {
     display: inline-block;
     width: 125px;
+}
+
+#add-button {
+    display: flex;
+    justify-content: center;
+}
+
+#add-button button {
+    margin-top: 15px;
+    width: 300px;
+    height: 40px;
+    border-radius: 30px;
+}
+
+button {
+    background-color: skyblue;
+    color: #1f2937;
+    border-color: skyblue;
+    border-radius: 10px;
+    border-style: solid;
+    width: 100px;
+    height: 35px;
+    padding: 5px;
+    justify-self: center;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
