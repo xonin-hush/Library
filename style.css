@@ -53,10 +53,12 @@ ul {
     display: flex;
     flex-direction: column;
     text-align: start;
-    padding: 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 2em;
+    padding-right: 1em;
     background-color: #ffffff;
     border-radius: 12px;
-    /* max-width: 450px; */
     border-left: 10px solid skyblue;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
@@ -67,36 +69,51 @@ ul {
     justify-items: center;
     grid-template-columns: repeat(2, 1fr);
     grid-column: 1/2;
-    gap: 20px;
+    /* gap: 20px; */
+    row-gap: 25px;
 
 }
 
 
 
 .img {
-    height: 2em;
-    fill: skyblue !important;
+    position:fixed;
     display: flex;
-    justify-self: center;
-    align-self: center;
+    height: 2em;
+    width: 2em;
+    fill: skyblue !important; 
+    align-self: end;
 }
 
 button:hover {
-    background-color: rgb(151, 114, 45);
-    border-color: rgb(151, 114, 45);
+    color: skyblue;
+    background-color: #1f2937;
+    border-color: #1f2937;
 }
 
 .img:hover {
     font-size: 90%;
+    fill: #1f2937;
     justify-self: center;
-    align-self: center;
+    align-self: end;
 
 }
 
+#welcome {
+    margin-top: 0.5em;
+    font-size: 5em;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Whisper', cursive;
+    display: flex;
+    justify-content: center;
+}
+
+input[required]+label:after {
+    content: '*';
+    color: red;
+}
+
 .footer {
-    /* width: 95.8vw;
-    position: absolute; */
-    /* bottom: 0; */
     justify-self: end;
     text-align: center;
     background-color: #1f2937;
@@ -127,7 +144,10 @@ label {
     margin-top: 15px;
     width: 300px;
     height: 40px;
-    border-radius: 30px;
+    border-radius: 15px;
+}
+.button{
+    margin-top: 10px;
 }
 
 button {
