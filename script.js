@@ -83,14 +83,6 @@ function showBooks() {
         }
       }
     }
-    // //remove button
-    // var removeIcon = document.createElement('img')
-    // removeIcon.setAttribute('id', 'removeButton')
-    // removeIcon.src = "/images/minus-circle-outline.svg"
-    // removeIcon.classList.add('img')
-    // removeIcon.value = i
-    // card.appendChild(removeIcon)
-    //status button
     var statusButton = document.createElement('button')
     statusButton.value = i
     statusButton.setAttribute('id', `changeStatus-${i}`)
