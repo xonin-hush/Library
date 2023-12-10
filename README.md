@@ -1,9 +1,9 @@
 
-# [Odin-Library](www.xonin.dev)
+# [Odin-Library](https://library.xonin.dev)
  First project in "the odin project" JavaScript Course, it demonstrates objects and object constructors  [The Odin Project-JavaScript](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript).
 
 ## Links
-[Visit website](www.xonin.dev)
+[Visit website](https://library.xonin.dev)
 
 ## Technologies used
 ![HTML5](https://img.shields.io/badge/html5-E34F26.svg?style=for-the-badge&logo=html5&logoColor=FFF)
