@@ -32,7 +32,6 @@ function addBookToLibrary() {
     var temp = title.value
     var author = document.querySelector("#author-name")
     var pages = document.querySelector("#pages-number")
-    var readStatus = document.querySelector("#read-status")
     if (title.value && author.value && pages.value !== "") {
       temp = new Book(title.value, author.value, pages.value, "on")
       myLibrary.push(temp)
